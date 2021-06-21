@@ -1,0 +1,8 @@
+<title>Reusable Form</title>
+
+<form method="POST">
+    {{ form.newsTitle.label }} {{ form.newsTitle(id='title-field') }}
+    {{ form.newsText.label }} {{ form.newsText(id='text-field') }}
+    {{ form.newsUrl.label }} {{ form.newsUrl(id='url-field') }}
+    {{ form.submit() }}
+</form>

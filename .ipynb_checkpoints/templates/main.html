@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <title>Перевірка новин на фейк</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/main.css') }}">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div class="container">
+<header>
+    <nav class="nav_bar">
+    <div class="header_links">
+        <ul>
+            <li><a href="/">Головна</a></li>
+            <li><a href="/about">Про нас</a></li>
+            <li><a href="/help">F.A.Q.</a></li>
+            <li><a href="/feedback">Зворотний зв'язок</a></li>
+        </ul>
+    </div>
+        <div class="header_logo">
+        <a href="/" title="Перевірка новин на фейк"><img class="header_logo" alt="Fake.Detect" title="Виявлення фейкових новин за допомогою нейромереж" src="{{ url_for('static',filename='images/Logo4.png') }}"></a>
+        </div>
+    </nav>
+</header>
+<main>
+    <h1>Fake-Test: Перевірка новин</h1>
+    <div class="content">
+    <form action="/prediction" method="post">
+        {{ form.title(class='textbox', placeholder=form.title.label.text) }}
+        {{ form.text(class='message', placeholder=form.text.label.text) }}
+        {{ form.url(class='textbox', placeholder=form.url.label.text) }}
+        {{ form.submit(class="button") }}
+        {{ form.upload(class="button") }}
+    </form>
+    </div>
+</main>
+<footer>
+    <div class="footer_description">
+        <h2>Наші переваги:</h2>
+        <ul>
+        <li><span class="bold">Автоматичне оновлення</span><br/>База даних з новинами постійно оновлюється, що дозволяє завжди коректно оцінювати інформацію, враховуючи мінливість стилів написання неправдивих новин.</li>
+        <li><span class="bold">Машинне навчання</span><br/>Нейромережевий підхід забезпечує високу точність класифікації на україномовних текстах. Шляхом експериментів ми обрали найкращі параметри мережі для роботи з українськими текстами.</li>
+        <li><span class="bold">Унікальність розробки</span><br/>Перший сервіс з підтримкою української мови, здатний аналізувати україномовні та російськомовні тексти, побудований на власному датасеті фейкових новин, що присутні в українському медіа-просторі.</li>
+        </ul>
+    </div>
+</footer>
+</div>
+</body>
+</html>

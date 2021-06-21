@@ -1,0 +1,50 @@
+<html>
+<head>
+    <title>Перевірка новин на фейк</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/main.css') }}">
+</head>
+<body>
+<div class="container">
+<header>
+    <nav class="nav_bar">
+    <div class="header_links">
+        <ul>
+            <li><a href="/">Головна</a></li>
+            <li><a href="/about">Про нас</a></li>
+            <li><a href="/help">F.A.Q.</a></li>
+            <li><a href="/feedback">Зворотний зв'язок</a></li>
+        </ul>
+    </div>
+        <div class="header_logo">
+        <a href="/" title="Перевірка новин на фейк"><img class="header_logo" alt="Fake.Detect" title="Виявлення фейкових новин за допомогою нейромереж" src="{{ url_for('static',filename='images/Logo4.png') }}"></a>
+        </div>
+    </nav>
+</header>
+<main>
+    <h1>Fake-Test: Результати перевірки</h1>
+        <div class="content">
+            <p><span class="bold">Назва новини:</span> {{ title }}</p>
+            <p><span class="bold">Текст новини після попередньої обробки:</span> {{ text }}</p>
+            <p><span class="bold">Посилання:</span> {{ url }}</p>
+    <p>Ми визначили, що ця новина - {{ label }}</p>
+    <hr>
+    <form method="post" action="/approve">
+        <div style="display:none">
+        <input type="text" name="title" value="{{ title }}">
+        <input type="text" name="text" value="{{ source }}">
+        <input type="text" name="url" value="{{ url }}">
+        <input type="text" name="label" value="{{label}}">
+        </div>
+        <input type="submit" class="button" name="submitAccept" value="Підтвердити">
+        <input type="submit" class="button" name="submitDecline" value="Відхилити">
+    </form>
+        </div>
+</main>
+<footer>
+    <div class="footer_description">
+        &copy 2020
+    </div>
+</footer>
+</div>
+</body>
+</html>
