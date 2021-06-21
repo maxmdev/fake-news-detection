@@ -9,7 +9,7 @@ pip install -r requirements.txt
 ```
 
 ## Usage
-Run Notebook.
+Run Notebook or prediction.py to start App.
 
 App will be started at localhost:5000;
 
